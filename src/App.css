@@ -1,34 +1,52 @@
 /* App.css */
 body.dark-mode {
-  background-color: #000000; /* 완전한 검정색 배경 */
-  color: #ffffff; /* 밝은 텍스트 색상 */
+  background-color: #000000; /* 전체 배경색 */
+  color: #ffffff; /* 기본 텍스트 색상 */
 }
 
 .navbar-dark-mode {
-  background-color: #000000; /* Navbar도 검정색 */
-  color: #ffffff; /* Navbar 텍스트는 흰색 */
+  background-color: #000000; /* Navbar 배경색 */
+  color: #ffffff; /* Navbar 텍스트 색상 */
 }
 
 .navbar-dark-mode .nav-link {
-  color: #ffffff !important; /* Navbar 링크도 흰색 */
+  color: #ffffff !important; /* Navbar 링크 색상 */
 }
 
 .form-control-dark-mode {
-  background-color: #1c1c1c !important; /* 입력 필드의 어두운 배경 */
-  color: #ffffff !important; /* 입력 필드의 텍스트는 흰색 */
-  border: 1px solid #555555 !important; /* 입력 필드의 테두리 */
+  background-color: #1c1c1c !important; /* 검색 입력 필드 배경 */
+  color: #ffffff !important; /* 검색 입력 필드 텍스트 색상 */
+  border: 1px solid #555555 !important; /* 검색 입력 필드 테두리 */
 }
 
 /* 추가: placeholder 텍스트의 색상 설정 */
 .form-control-dark-mode::placeholder {
-  color: #888888 !important; /* placeholder 텍스트의 색상 */
-  opacity: 1; /* placeholder 텍스트의 불투명도 */
+  color: #888888 !important; /* placeholder 텍스트 색상 */
+  opacity: 1; /* placeholder 텍스트 불투명도 */
 }
 
 .form-control-light-mode {
-  background-color: #ffffff; /* 라이트 모드의 기본 흰색 배경 */
-  color: #000000; /* 라이트 모드의 텍스트는 검정색 */
-  border: 1px solid #cccccc; /* 라이트 모드의 테두리 */
+  background-color: #ffffff; /* 검색 입력 필드 배경 (라이트 모드) */
+  color: #000000; /* 검색 입력 필드 텍스트 색상 (라이트 모드) */
+  border: 1px solid #cccccc; /* 검색 입력 필드 테두리 (라이트 모드) */
+}
+
+/* 다크 모드 페이지 배경 */
+.page-content-dark {
+  background-color: #000000; /* 페이지 배경색 */
+  color: #ffffff; /* 페이지 텍스트 색상 */
+  min-height: 100vh; /* 페이지의 최소 높이를 뷰포트 높이로 설정 */
+}
+
+/* 라이트 모드 페이지 배경 */
+.page-content-light {
+  background-color: #ffffff !important; /* 페이지 배경색 */
+  color: #000000; /* 페이지 텍스트 색상 */
+  min-height: 100vh; /* 페이지의 최소 높이를 뷰포트 높이로 설정 */
+}
+
+.bg-body-tertiary {
+  background-color: #ffffff !important; /* 완전 흰색 배경 */
 }
 
 /* 버튼 스타일 - 다크 모드에서도 빨간색 유지 */

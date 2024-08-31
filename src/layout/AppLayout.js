@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Outlet, Link } from 'react-router-dom'; // Import Link from react-router-dom
-
-import '../App.css'; // CSS 파일을 import 합니다.
+import React from 'react';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
+import { Outlet, Link } from 'react-router-dom';
+import { useDarkMode } from '../context/DarkModeContext'; // Context import
+import '../App.css';
 
 const AppLayout = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const { isDarkMode, toggleDarkMode } = useDarkMode(); // useDarkMode 훅으로 상태와 토글 함수 가져오기
 
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
@@ -40,16 +31,16 @@ const AppLayout = () => {
               <Nav.Link as={Link} to="/movies" className={isDarkMode ? 'text-light' : ''}>Movies</Nav.Link>
             </Nav>
             <Form className="d-flex">
-                <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className={`me-2 ${isDarkMode ? 'form-control-dark-mode' : 'form-control-light-mode'}`}
-                    aria-label="Search"
-                />
-                <Button variant="outline-danger" className={isDarkMode ? 'btn-outline-danger-dark-mode' : ''}>Search</Button>
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className={`me-2 ${isDarkMode ? 'form-control-dark-mode' : 'form-control-light-mode'}`}
+                aria-label="Search"
+              />
+              <Button variant="outline-danger" className={isDarkMode ? 'btn-outline-danger-dark-mode' : ''}>Search</Button>
             </Form>
             {/* 다크 모드 토글 버튼 추가 */}
-            <Button variant="secondary" onClick={toggleDarkMode} className="ms-2">
+            <Button type="button" className="ms-2 btn btn-secondary" onClick={toggleDarkMode}>
               {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </Button>
           </Navbar.Collapse>
@@ -58,6 +49,6 @@ const AppLayout = () => {
       <Outlet />
     </div>
   );
-}
+};
 
 export default AppLayout;
