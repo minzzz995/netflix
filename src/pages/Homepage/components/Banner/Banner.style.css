@@ -1,28 +1,51 @@
-.banner{
+.banner {
     height: 56vh;
-    background-position: left;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
-.banner:before{
-    content:'';
-    background:limear-graadient(to top , black, transparent);
-    position:absolute;
+.banner:before {
+    content: '';
+    background: linear-gradient(to top, black, transparent);
+    position: absolute;
     left: 0;
+    top: 0;
     height: 56vh;
     width: 100%;
 }
 
-.banner-text-area{
-    width: 36%;
+.banner-text-area {
+    width: 80%; /* Adjusted for mobile */
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem; /* Adjusted padding for mobile */
+    position: relative;
+    z-index: 2;
 }
 
-.banner-text-area >* {
+.banner-text-area > * {
     z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 40vh; /* Smaller height for mobile */
+    }
+
+    .banner-text-area {
+        width: 90%; /* More width for better text fit */
+        padding: 1rem; /* Less padding for mobile */
+    }
+
+    .banner-text-area h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .banner-text-area p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
 }
