@@ -1,7 +1,9 @@
 import React from 'react';
 import { useDarkMode } from '../../context/DarkModeContext'; // 다크모드 컨텍스트 사용
 import Banner from './components/Banner/Banner';
-import PopularMovieSlide from './components/PopularMovieSlide/PopularMovieSlide';
+import PopularMovieSlide from "./components/PopularMovieSlide/PopularMovieSlide";
+import TopRatedMovieSlide from "./components/TopRatedMovieSlide/TopRatedMovieSlide";
+import UpcomingMovieSlide from "./components/UpcomingMovieSlide/UpcomingMovieSlide";
 
 // 1. 배너 =>  popular영화를 들고와서 첫번쨰 아이템을 보여주기
 // 2. popular movie
@@ -17,6 +19,8 @@ const Homepage = () => {
     <div className={isDarkMode ? 'page-content-dark' : 'page-content-light'}>
       <Banner />
       <PopularMovieSlide />
+      <TopRatedMovieSlide />
+      <UpcomingMovieSlide />
     </div>
   );
 };
