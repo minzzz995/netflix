@@ -3,7 +3,7 @@ import { useDarkMode } from '../../context/DarkModeContext'; // 다크모드 컨
 import Banner from './components/Banner/Banner';
 import PopularMovieSlide from "./components/PopularMovieSlide/PopularMovieSlide";
 import TopRatedMovieSlide from "./components/TopRatedMovieSlide/TopRatedMovieSlide";
-import UpcomingMovieSlide from "./components/UpcomingMovieSlide/UpcomingMovieSlide";
+import UpcomingMovieSlide from "./components/UpcomingMoiveSlide/UpcomingMoiveSlide";
 
 // 1. 배너 =>  popular영화를 들고와서 첫번쨰 아이템을 보여주기
 // 2. popular movie

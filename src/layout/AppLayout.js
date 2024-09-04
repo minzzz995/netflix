@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { useDarkMode } from '../context/DarkModeContext'; // Context import
 import '../App.css';
 
 const AppLayout = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode(); // useDarkMode 훅으로 상태와 토글 함수 가져오기
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate()
+
+  const searchByKeyword=(event)=>{
+    event.preventDefault();
+    // url을 바꿔줘야 함
+    navigate(`/movies?q=${keyword}`);
+    setKeyword("");
+  }
 
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
@@ -30,14 +39,16 @@ const AppLayout = () => {
               <Nav.Link as={Link} to="/" className={isDarkMode ? 'text-light' : ''}>Home</Nav.Link>
               <Nav.Link as={Link} to="/movies" className={isDarkMode ? 'text-light' : ''}>Movies</Nav.Link>
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
                 placeholder="Search"
                 className={`me-2 ${isDarkMode ? 'form-control-dark-mode' : 'form-control-light-mode'}`}
                 aria-label="Search"
+                value={keyword}
+                onChange={(event) => setKeyword(event.target.value)}
               />
-              <Button variant="outline-danger" className={isDarkMode ? 'btn-outline-danger-dark-mode' : ''}>Search</Button>
+              <Button variant="outline-danger" className={isDarkMode ? 'btn-outline-danger-dark-mode' : ''} type='submit'>Search</Button>
             </Form>
             {/* 다크 모드 토글 버튼 추가 */}
             <Button type="button" className="ms-2 btn btn-secondary" onClick={toggleDarkMode}>

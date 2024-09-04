@@ -9,7 +9,7 @@ const UpcomingMoiveSlide = () => {
     console.log('UpcomingMoiveSlide mounted');
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
 
-  if (isLoading) {
+ if (isLoading) {
     return <h1>Loading...</h1>;
   }
 
@@ -20,11 +20,11 @@ const UpcomingMoiveSlide = () => {
   if (!data || !data.results || data.results.length === 0) {
     return <h1>No popular movies found.</h1>;
   }
-
+ 
     // 디버깅: 데이터 확인
     console.log('Upcoming movies data:', data);
   return (
-    <div className="UpcomingMoiveSlide text-white">
+    <div className="UpcomingMovieSlide text-white">
       <MovieSlider
         title={"Upcoming Movies"}
         movies={data.results}
