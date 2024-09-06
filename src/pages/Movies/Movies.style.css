@@ -8,3 +8,34 @@
     flex: 1; /* 컨텐츠가 화면을 채우도록 설정 */
     height: 100vh; /* 화면 높이만큼 컨테이너가 차지하게 설정 */
 }
+
+.pagination {
+    display: flex;
+    justify-content: center; /* 페이지네이션을 중앙에 정렬 */
+    padding: 20px 0;
+    flex-wrap: nowrap; /* 페이지네이션이 한 줄에 표시되도록 설정 */
+    overflow-x: auto; /* 항목이 너무 많으면 가로 스크롤 생성 */
+    font-size: 0.8rem; /* 글씨 크기를 줄여서 한 줄에 맞게 설정 */
+}
+
+
+.page-item a {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 0.8rem; /* 링크 글씨 크기를 줄이기 */
+}
+
+.page-item.active a {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 반응형 처리 - 작은 화면에서도 페이지네이션이 한 줄에 표시되도록 */
+@media (max-width: 768px) {
+    .pagination {
+        justify-content: space-around; /* 작은 화면에서 공간 균등 배분 */
+    }
+}

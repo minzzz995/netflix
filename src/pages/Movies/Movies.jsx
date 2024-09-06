@@ -142,7 +142,7 @@ const Movies = () => {
                         pageRangeDisplayed={3}
                         marginPagesDisplayed={2}
                         pageCount={data?.total_pages}
-                        previousLabel="< previous"
+                        previousLabel="< pre"
                         pageClassName="page-item"
                         pageLinkClassName="page-link"
                         previousClassName="page-item"
