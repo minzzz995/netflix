@@ -173,3 +173,19 @@
 .carousel-item-padding-20-px {
     padding: 0 10px; /* 좌우 10px씩 간격 추가 */
 }
+
+/* 반응형 디자인: 포스터와 영화 정보를 상하로 배치 */
+.movie-detail-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* 모바일 뷰에서 포스터와 영화 정보를 상하 배치 */
+@media (max-width: 768px) {
+    .movie-detail-container {
+        flex-direction: column;
+    }
+}

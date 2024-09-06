@@ -65,7 +65,15 @@ const MovieDetail = () => {
 
   // 유튜브 예고편 영상 ID
   const trailer = videos?.find(video => video.type === 'Trailer' && video.site === 'YouTube');
+  const videoOptions = {
+    width: '100%', // modal 크기에 맞춰 width를 100%로 설정
+    height: '390',
+    playerVars: {
+      autoplay: 1,
+    },
+  };
 
+  
   return (
     <div className={isDarkMode ? 'page-content-dark' : 'page-content-light'}>
         {/* 영화 기본정보 섹션 */}
@@ -130,7 +138,7 @@ const MovieDetail = () => {
                 {!trailer && isVideosLoading ? (
                     <p>Loading trailer...</p>
                 ) : trailer ? (
-                    <YouTube videoId={trailer.key} />
+                    <YouTube videoId={trailer.key} opts={videoOptions} />
                 ) : (
                     <p>No trailer available</p>
                 )}
@@ -186,7 +194,7 @@ const MovieDetail = () => {
               ) : recommendations.length === 0 ? (
                   <p>No recommendations available for this movie.</p>
               ) : (
-                  <Carousel responsive={recommendResponsive} infinite={true} centerMode={true} itemClass="carousel-item-padding-40-px">
+                  <Carousel responsive={recommendResponsive} infinite={true} centerMode={true} itemClass="carousel-item-padding-20-px">
                       {recommendations.map((movie) => (
                           <div key={movie.id} className="recommended-movie-card">
                               <img
