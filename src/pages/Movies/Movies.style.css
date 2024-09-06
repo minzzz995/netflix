@@ -1,0 +1,11 @@
+.page-content-dark, .page-content-light {
+    min-height: 100vh; /* 화면 전체 높이 */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* 컨텐츠가 화면을 채우도록 설정 */
+    height: 100vh; /* 화면 높이만큼 컨테이너가 차지하게 설정 */
+}
+  
