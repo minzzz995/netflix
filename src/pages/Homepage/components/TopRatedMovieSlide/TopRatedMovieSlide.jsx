@@ -5,7 +5,6 @@ import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
 
 const TopRatedMovieSlide = () => {
-  console.log('TopRatedMovieSlide mounted');
   const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
 
   if (isLoading) {
@@ -19,9 +18,6 @@ const TopRatedMovieSlide = () => {
   if (!data || !data.results || data.results.length === 0) {
     return <h1>No popular movies found.</h1>;
   }
-
-  // 디버깅: 데이터 확인
-  console.log('Top Rated movies data:', data);
 
   return (
     <div className="TopRatedMovieSlide text-white">

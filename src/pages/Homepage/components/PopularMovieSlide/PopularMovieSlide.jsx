@@ -5,7 +5,6 @@ import {responsive} from "../../../../constants/responsive"
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 
 const PopularMovieSlide = () => {
-    console.log('PopularMovieSlide mounted');
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
 
   if (isLoading) {
@@ -19,9 +18,6 @@ const PopularMovieSlide = () => {
   if (!data || !data.results || data.results.length === 0) {
     return <h1>No popular movies found.</h1>;
   }
-
-  // 디버깅: 데이터 확인
-  console.log('Popular movies data:', data);
 
   return (
     <div>

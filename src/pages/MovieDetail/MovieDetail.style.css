@@ -1,0 +1,175 @@
+.page-content-dark {
+    background-color: #121212;
+    color: white;
+}
+
+.page-content-light {
+    background-color: white;
+    color: black;
+}
+
+/* 다크 모드 스타일 */
+.modal-dark .modal-content {
+    background-color: #121212;
+    color: white;
+}
+
+.modal-light .modal-content {
+    background-color: white;
+    color: black;
+}
+
+.movie-detail-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-poster {
+    width: 300px;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.genres {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.budget-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.budget-badge {
+    width: 120px;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.review-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5252;
+}
+
+.review-content {
+    font-size: 1rem;
+    color: white;
+    margin-top: 10px;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.read-more {
+    margin-top: 10px;
+    background-color: #ff5252;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    background-color: #ff3030;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.recommended-movie-card {
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.recommended-movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.recommended-movie-title {
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* 다크 모드일 때 모달 닫기 버튼을 흰색으로 */
+.modal-dark .btn-close {
+    filter: invert(1);
+}
+
+/* 다크 모드 */
+.reviews-section-dark {
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.recommendations-section-dark {
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 라이트 모드 */
+.reviews-section-light {
+    background-color: #f9f9f9;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.recommendations-section-light {
+    background-color: #f9f9f9;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Carousel 항목 간의 간격을 20px로 설정 */
+.carousel-item-padding-20-px {
+    padding: 0 10px; /* 좌우 10px씩 간격 추가 */
+}
