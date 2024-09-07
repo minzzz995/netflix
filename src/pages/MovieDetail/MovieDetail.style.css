@@ -188,4 +188,16 @@
     .movie-detail-container {
         flex-direction: column;
     }
+    .review-card {
+        max-height: none; /* 모바일에서 높이 제한 해제 */
+        overflow: visible; /* 스크롤 대신 전체 내용을 보여줌 */
+    }
+
+    .review-content {
+        font-size: 0.9rem; /* 모바일에서 폰트 크기 조정 */
+    }
+
+    .read-more {
+        font-size: 0.9rem; /* 버튼 크기 조정 */
+    }
 }

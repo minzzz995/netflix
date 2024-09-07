@@ -162,20 +162,28 @@ const MovieDetail = () => {
                   <p>No reviews available for this movie.</p>
               ) : (
                   <div className="reviews-list">
-                      {reviewsToShow.map((review) => {
-                          const isExpanded = expandedReviews[review.id]; // 리뷰가 확장되었는지 여부
-                          const reviewContent = isExpanded ? review.content : `${review.content.substring(0, 150)}...`;
+                    {reviewsToShow.map((review) => {
+                        const isExpanded = expandedReviews[review.id]; // 리뷰가 확장되었는지 여부
+                        const reviewContent = isExpanded ? review.content : `${review.content.substring(0, 150)}...`;
 
-                          return (
-                              <div key={review.id} className="review-card">
-                                  <h4 className="review-author">{review.author}</h4>
-                                  <p className="review-content">{reviewContent}</p>
-                                  <button className="read-more" onClick={() => handleReadMore(review.id)}>
-                                      {isExpanded ? 'Show less' : 'Read more'}
-                                  </button>
-                              </div>
-                          );
-                      })}
+                        return (
+                            <div key={review.id} className="review-card">
+                                <h4 className="review-author">{review.author}</h4>
+                                <p
+                                    className="review-content"
+                                    style={{
+                                        maxHeight: isExpanded ? 'none' : '100px',
+                                        overflow: isExpanded ? 'visible' : 'hidden',
+                                    }}
+                                >
+                                    {reviewContent}
+                                </p>
+                                <button className="read-more" onClick={() => handleReadMore(review.id)}>
+                                    {isExpanded ? 'Show less' : 'Read more'}
+                                </button>
+                            </div>
+                        );
+                    })}
 
                       {/* 전체 리뷰가 3개 이상일 경우 "Show more/less" 버튼 표시 */}
                       {reviews.length > 3 && (
