@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDarkMode } from '../../context/DarkModeContext'; // 다크모드 컨텍스트 사용
 import { Badge, Button, Modal } from 'react-bootstrap'; // Modal 추가
 import './MovieDetail.style.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // useNavigate 추가
 import { useMovieDetailQuery } from '../../hooks/useMovieDetail';
 import { useMovieReviewsQuery } from '../../hooks/useMovieReviews';
 import { useMovieRecommendationsQuery } from '../../hooks/useMovieRecommendations'; // 추천 영화 훅 추가
@@ -16,7 +16,8 @@ const MovieDetail = () => {
   
   const { isDarkMode } = useDarkMode(); // 다크모드 상태 가져오기
   const { id } = useParams();
-  
+  const navigate = useNavigate(); // useNavigate 훅 사용
+
   // 영화 상세 정보
   const { data: movie, isLoading: isMovieLoading, isError: isMovieError } = useMovieDetailQuery(id);
 
@@ -73,7 +74,11 @@ const MovieDetail = () => {
     },
   };
 
-  
+  // 추천 영화 클릭 시 해당 영화 detail page로 이동
+  const handleMovieClick = (movieId) => {
+    navigate(`/movies/${movieId}`); // 클릭된 영화의 ID로 페이지 이동
+  };
+
   return (
     <div className={isDarkMode ? 'page-content-dark' : 'page-content-light'}>
         {/* 영화 기본정보 섹션 */}
@@ -196,7 +201,12 @@ const MovieDetail = () => {
               ) : (
                   <Carousel responsive={recommendResponsive} infinite={true} centerMode={true} itemClass="carousel-item-padding-20-px">
                       {recommendations.map((movie) => (
-                          <div key={movie.id} className="recommended-movie-card">
+                          <div
+                              key={movie.id}
+                              className="recommended-movie-card"
+                              onClick={() => handleMovieClick(movie.id)} // 영화 클릭 시 이동
+                              style={{ cursor: 'pointer' }} // 클릭 가능한 스타일 추가
+                          >
                               <img
                                   src={`https://media.themoviedb.org/t/p/w200${movie.poster_path}`}
                                   alt={movie.title}
